@@ -1,8 +1,13 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+<<<<<<< HEAD
 import Footer from '../components/Footer';
 import Links from '../components/Links';
+=======
+import Footer from '../components/footer';
+import Links from '../components/links';
+>>>>>>> 5410ea034294b8dd1e4d878b5c28093566dc7551
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -15,7 +20,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+<<<<<<< HEAD
         <h1 className={styles.title}>Index Page</h1>
+=======
+        <h1 className={styles.title}>Index page</h1>
+>>>>>>> 5410ea034294b8dd1e4d878b5c28093566dc7551
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -24,7 +33,10 @@ const Home: NextPage = () => {
 
         <Links />
       </main>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5410ea034294b8dd1e4d878b5c28093566dc7551
       <Footer />
     </div>
   );

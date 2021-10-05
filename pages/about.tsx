@@ -1,11 +1,19 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+<<<<<<< HEAD
 import Footer from '../components/Footer';
 import Links from '../components/Links';
 import styles from '../styles/Home.module.css';
 
 const About: NextPage = () => {
+=======
+import Footer from '../components/footer';
+import Links from '../components/links';
+import styles from '../styles/Home.module.css';
+
+const Home: NextPage = () => {
+>>>>>>> 5410ea034294b8dd1e4d878b5c28093566dc7551
   return (
     <div className={styles.container}>
       <Head>
@@ -15,18 +23,32 @@ const About: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+<<<<<<< HEAD
         <h1 className={styles.title}>About Page</h1>
+=======
+        <h1 className={styles.title}>About page</h1>
+>>>>>>> 5410ea034294b8dd1e4d878b5c28093566dc7551
 
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/about.js</code>
         </p>
+<<<<<<< HEAD
         <Links />
       </main>
 
+=======
+
+        <Links />
+      </main>
+>>>>>>> 5410ea034294b8dd1e4d878b5c28093566dc7551
       <Footer />
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default About;
+=======
+export default Home;
+>>>>>>> 5410ea034294b8dd1e4d878b5c28093566dc7551
