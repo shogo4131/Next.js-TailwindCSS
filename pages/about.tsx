@@ -2,9 +2,9 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import Footer from '../components/Footer';
-import Links from '../components/Links';
+import Main from '../components/Main';
+
 import styles from '../styles/Home.module.css';
-import HeadLine from '../components/HeadLine';
 
 const About: NextPage = () => {
   return (
@@ -15,11 +15,7 @@ const About: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <HeadLine page="about" />
-
-        <Links />
-      </main>
+      <Main page="about" />
 
       <Footer />
     </div>
