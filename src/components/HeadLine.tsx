@@ -13,7 +13,6 @@ const HeadLine = (props: Props) => {
   return (
     <>
       <h1 className={styles.title}>{page}</h1>
-
       <p className={styles.description}>Get started by editing {children}</p>
     </>
   );
