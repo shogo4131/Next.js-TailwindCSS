@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import styles from '../styles/Home.module.css';
+import styles from 'src/styles/Home.module.css';
 
 type Props = {
   page: string;
