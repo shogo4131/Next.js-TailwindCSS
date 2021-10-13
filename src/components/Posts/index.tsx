@@ -1,11 +1,36 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useReducer } from 'react';
 
-import { PostList } from '../../types/posts';
+import { InitialState, ActionType } from '../../types/posts';
+
+const initialState: InitialState = {
+  data: [],
+  loading: true,
+  error: null,
+};
+
+const reducer = (state: InitialState, action: ActionType) => {
+  switch (action.type) {
+    case 'END':
+      return {
+        ...state,
+        data: action.data,
+        loading: false,
+      };
+
+    case 'ERROR':
+      return {
+        ...state,
+        loading: false,
+        error: action.error,
+      };
+
+    default:
+      throw new Error('エラーが発生したためデータが表示されませんでした');
+  }
+};
 
 export const Posts = () => {
-  const [posts, setPosts] = useState<PostList[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<unknown | string>(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const getPosts = useCallback(async () => {
     try {
@@ -16,11 +41,10 @@ export const Posts = () => {
       }
 
       const resData = await res.json();
-      setPosts(resData);
-    } catch (e) {
-      setError(e);
-    } finally {
-      setLoading(false);
+
+      dispatch({ type: 'END', data: resData });
+    } catch (error) {
+      dispatch({ type: 'ERROR', error: error });
     }
   }, []);
 
@@ -28,21 +52,21 @@ export const Posts = () => {
     getPosts();
   }, [getPosts]);
 
-  if (loading) {
+  if (state.loading) {
     return <p>ローディング中</p>;
   }
 
-  if (error) {
-    return <p>{error.message}</p>;
+  if (state.error) {
+    return <p>{state.error.message}</p>;
   }
 
-  if (posts.length === 0) {
+  if (state.data.length === 0) {
     return <p>表示できるデータがありませんでした</p>;
   }
 
   return (
     <ol>
-      {posts.map(({ id, body }) => (
+      {state.data.map(({ id, body }) => (
         <li key={id}>{body}</li>
       ))}
     </ol>

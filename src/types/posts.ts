@@ -7,3 +7,22 @@ export interface PostList {
   title: string;
   body: string;
 }
+
+/**
+ * API初期 State
+ */
+export interface InitialState {
+  type?: string;
+  data: PostList[];
+  loading: boolean;
+  error: unknown;
+}
+
+/**
+ * Action Type
+ */
+export interface ActionType {
+  type: 'END' | 'ERROR';
+  data: PostList[];
+  error?: unknown;
+}
