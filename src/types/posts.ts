@@ -9,20 +9,28 @@ export interface PostList {
 }
 
 /**
- * API初期 State
+ * https://jsonplaceholder.typicode.com/users
  */
-export interface InitialState {
-  type?: string;
-  data: PostList[];
-  loading: boolean;
-  error: unknown;
-}
-
-/**
- * Action Type
- */
-export interface ActionType {
-  type: 'END' | 'ERROR';
-  data: PostList[];
-  error?: unknown;
+export interface UserInfo {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
 }

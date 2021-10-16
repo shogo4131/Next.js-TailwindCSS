@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import Link from 'next/Link';
 
-import styles from 'src/styles/Header.module.css';
+import styles from './Header.module.css';
 
 const Header = () => {
   const navItems = useMemo(() => {
     return [
       { href: '/', label: 'Index' },
-      { href: '/about', label: 'About' },
+      { href: '/posts', label: 'Posts' },
     ];
   }, []);
 
