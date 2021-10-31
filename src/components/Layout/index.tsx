@@ -1,5 +1,13 @@
-import styles from './Layout.module.css';
+import { FC, ReactNode } from 'react';
 
-export const Layout = (props) => {
-  return <div className={styles.container}>{props.children}</div>;
+interface Props {
+  children?: ReactNode;
+}
+
+export const Layout: FC<Props> = ({ children }) => {
+  return (
+    <div className="flex flex-col items-center mx-auto px-2 min-h-screen max-w-2xl">
+      {children}
+    </div>
+  );
 };

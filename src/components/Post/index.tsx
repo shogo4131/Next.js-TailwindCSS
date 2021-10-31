@@ -17,10 +17,10 @@ export const Post = () => {
       <Head>
         <title>{post?.title}</title>
       </Head>
-      <div>
-        <h1>{post?.title}</h1>
-        <p>{post?.body}</p>
-        <div>{user?.name}</div>
+      <h1 className="font-bold text-3xl mt-4">{user?.name}</h1>
+      <div className="mt-7">
+        <p className="text-2xl mb-3">{post?.title}</p>
+        <p className="text-xl ">{post?.body}</p>
       </div>
     </>
   );
