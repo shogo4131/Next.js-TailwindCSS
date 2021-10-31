@@ -34,3 +34,14 @@ export interface UserInfo {
     bs: string;
   };
 }
+
+/**
+ * https://jsonplaceholder.typicode.com/comments
+ */
+export interface Comments {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}

@@ -17,12 +17,19 @@ export const Posts = () => {
   }
 
   return (
-    <ol>
-      {data?.map(({ id, body }) => (
+    <ul className="space-y-4 mt-4 mb-7">
+      {data?.map(({ id, body, title }) => (
         <li key={id}>
-          <Link href={`posts/${id}`}>{body}</Link>
+          <Link href={`posts/${id}`}>
+            <a className="group">
+              <h1 className="font-bold group-hover:text-blue-500">{title}</h1>
+              <p className="text-sm text-gray-400 group-hover:text-blue-500">
+                {body}
+              </p>
+            </a>
+          </Link>
         </li>
       ))}
-    </ol>
+    </ul>
   );
 };
