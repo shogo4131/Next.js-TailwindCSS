@@ -1,11 +1,7 @@
 import { useUser } from 'src/hooks/useUser';
 
 export const User = () => {
-  const { data, error, isLoading } = useUser();
-
-  if (isLoading) {
-    return <p>ローディング中</p>;
-  }
+  const { data, error } = useUser();
 
   if (error) {
     return <p>{error.message}</p>;
